@@ -1,0 +1,827 @@
+================================================================================================
+UBUNTU IP  ADDRESS : inet 192.168.0.114
+================================================================================================
+http://127.0.0.1/magento235/
+http://127.0.0.1/magento235/admin/
+================================================================================================
+Method to Redirect 301 using Htaccess in Magento:
+Locate the htaccess configuration file in the root on web servers running the Apache Web Server software and add:
+Redirect 301 [old URL] [New URL]
+Eg:
+Redirect 301 /blog/create-quote-and-order-programmatically-in-magento-2/ /blog/create-quote-order-programmatically-in-magento-2/
+
+Once you implement this method, the visitors and search engines will get redirected to your new URL.
+Get rid of 404 errors in your Magento stores using redirect 301!
+=================================================================================================
+Check if Elastic Search is Installed or not.
+curl -X GET "localhost:9200/"
+
+Install Elastic Serach
+bin/magento setup:install --base-url=http://lamode4kids.projectdemo.company/ --db-host=localhost --db-name=lamode4kids --db-user=lamode4kids --db-password=hi5OxwP&)mN4 --admin-firstname=Admin --admin-lastname=User --admin-email=admin@example.com --admin-user=admin --admin-password=admin@123 --language=en_US --currency=USD --timezone=America/Chicago --use-rewrites=1 --search-engine=elasticsearch7 --elasticsearch-host=127.0.0.1 --elasticsearch-port=9200 --elasticsearch-index-prefix=lamod4kids
+=================================================================================================
+https://devdocs.magento.com/guides/v2.4/comp-mgr/prereq/prereq_cron.html
+
+Activ CRON in New Setup
+php -dmemory_limit=8G bin/magento cron:run
+
+Run the following command to see if crons are running:
+service cron status
+
+CRON Install
+php -f bin/magento cron:install
+
+crontab -e
+Which php : usr/bin/php
+PWD : home/martialartsmart/public_html
+Example : 30 0 * * * /usr/bin/php -d memory_limit=2G -f /home/martialartsmart/public_html/bin/magento indexer:reindex aw_arep_statistics &> /home/martialartsmart/public_html/var/log/aw_arep_statistics.log
+
+write crontab -e
+and press I for insert mode,
+and paste cron,
+then press escape button
+and write :wq
+for save cron.
+
+CRON done,
+
+for check 
+type crontab -l
+=================================================================================================
+Install Composer Using Command
+
+curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --version=1.10.16
+
+1) check composer path using command
+which composer
+2) install composer
+php -dmemory_limit=6G /usr/local/bin/composer install
+=================================================================================================
+1. Update the below values in the php.ini file.
+
+upload_max_filesize : 1000M
+max_execution_time  : 18000
+memory_limit        : 4086M
+max_input_time      : 18000
+max_input_vars      : 3000
+post_max_size       : 1000M
+
+2. And then save the php.ini file.
+3. Then we restart Apache service
+
+
+/opt/lampp/etc/php.ini in Ubuntu
+=================================================================================================
+M1 ne Maintenance ma mukava mate
+
+https://www.a2hosting.in/kb/installable-applications/optimization-and-configuration/magento1/enabling-magento-maintenance-mode#Enabling-maintenance-mode-in-Magento-1.9-and-older-versions
+https://www.siteground.com/tutorials/magento-1/maintenance-mode/
+
+Put the Site Under Maintenance Using htaccess
+
+RewriteEngine on
+ RewriteCond %{REMOTE_HOST} !^124.123.122.12
+ RewriteCond %{REQUEST_URI} !^/index.html$
+ RewriteCond %{REQUEST_URI} !\.(gif|jpe?g|png|css|js)$
+ RewriteRule .* /index.html [L,R=302]
+ 
+ and add in index.html some code,
+ if index.html is not available create new html filr and code it,
+ 
+Put the Site Under Maintenance Using Magento Command
+
+bin/magento maintenance:allow-ips 124.123.122.12
+=================================================================================================
+Magento 2.3.4 Installation Database Table
+250 + 154 = 404
+==================================================================================================
+If You Want Copy any Folder thn you need to go that folder path and type "pwd" coomand,
+so get full path of directory,
+
+you need to run pwd command both server,
+where you copy folder and from you copy folder
+
+scp -r testdir a310743a_1@209.87.159.174:/home/a310743a/test.thejerusalemgiftshop.com/html/test2
+
+here testdir is folder that copy in test2 folder using above command
+==================================================================================================
+Options +FollowSymLinks
+to
+Options +SymLinksIfOwnerMatch
+==================================================================================================
+use in CMD when hosts file has changed
+
+ipconfig /flushdns
+==================================================================================================
+CRON JOB SET
+
+To view the crontab, enter the following command as the Magento file system owner:
+crontab -l
+
+---------------------------------------
+Server TimeZone
+command) date
+result)  Mon May 18 03:24:15 EDT 2020
+---------------------------------------
+==================================================================================================
+For Database privileges (s) Error :  sed -i 's/DEFINER=[^*]*\*/\*/g' matsonline_live_052820.sql
+==================================================================================================
+Folder Permission
+
+chmod 777 foldername or pathname
+==================================================================================================
+How do I add a customer's email to the sales invoice?
+
+Old ID for Sles Order Dealersupply Network
+mytesting022@gmail.com
+==================================================================================================
+Email: tmstest765@gmail.com
+Pass: S26!19xr4
+==================================================================================================
+dev@gmail.com
+1@qwaszx
+==================================================================================================
+New ID
+test080@mailinator.com
+==================================================================================================
+deepshah983@gmail.com
+LE8tb7Q/qgeZz
+==================================================================================================
+==================================================================================================
+PHP Version Check : 
+
+php -v
+php71 -v
+php72 -v
+php73 -v
+
+==================================================================================================
+find -iname "contact" (Find by file name)
+find /martialartsmart.com/html/var/ -type f -iname 5ee29fb48fef4
+
+grep -r 'Add to Cart' app/design
+grep -lr "Magento\Braintree\Model\Ui\ConfigProvider::CODE" app/ -s
+grep -r "Report ID: webapi-5ee29fb48fef4" var/
+============================ wget Command ===============================
+wget dealersupplynetworkm1.projectdemo.company/dealersupplynetworkm1.sql
+==================================================================================================
+
+chmod -R 777 var/cache pub/static/ generated
+chmod -R 777 var/cache pub/static/ pub/media generated
+
+For Dealer Supply Project Command 
+
+php72 -dmemory_limit=8G bin/magento cache:clean
+php72 -dmemory_limit=8G bin/magento cache:flush
+php72 -dmemory_limit=8G bin/magento setup:upgrade
+php72 -dmemory_limit=8G bin/magento setup:di:compile
+php72 -dmemory_limit=8G bin/magento setup:static-content:deploy -f
+php72 -dmemory_limit=8G bin/magento indexer:reset
+php72 -dmemory_limit=8G bin/magento indexer:reindex
+
+
+php72 -dmemory_limit=8G bin/magento module:status
+php72 -dmemory_limit=8G bin/magento catalog:image:resize
+
+==================================================================================================
+rm -rf var/cache/* var/page_cache/* var/view_preprocessed/* generated/code/* var/di/* pub/static/frontend/* pub/static/adminhtml/*
+
+chmod -R 777 var/ pub/ generated/
+chmod -R 777 var/cache pub/static/ pub/media generated
+php7.4 -dmemory_limit=8G bin/magento cache:clean
+php7.4 -dmemory_limit=8G bin/magento cache:flush
+php7.4 -dmemory_limit=8G bin/magento setup:upgrade
+php7.4 -dmemory_limit=8G bin/magento setup:di:compile
+php7.4 -dmemory_limit=8G bin/magento setup:static-content:deploy -f
+php7.4 -dmemory_limit=8G bin/magento indexer:reset
+php7.4 -dmemory_limit=8G bin/magento indexer:reindex
+
+php7.4 bin/magento deploy:mode:set developer
+==================================================================================================
+php72 bin/magento module:enable Tms_Printcomment
+php72 bin/magento module:disable Tms_Printcomment
+==================================================================================================
+chmod -R 777 var/ pub/ generated/
+chmod -R 777 var/cache pub/static/ pub/media generated
+php bin/magento admin:user:unlock abc
+==================================================================================================
+Connect SSH 
+Syntax : ssh your_username@host_ip_address
+         ssh dealersupplynetwork@104.200.17.185 -p 2408
+ssh -i ppkfile user@hostname
+Ex ssh -i id_rsa_new.ppk psc@23.235.207.86 -p 21
+passphase key
+==================================================================================================
+rm -rf .github/ app/ bin/ dev/ generated/ lib/ phpserver/ pub/ setup/ update/ var/ vendor/
+rm -rf app/ bin/ dev/ generated/ lib/ phpserver/ pub/ setup/ update/ var/ vendor/
+==================================================================================================
+
+rm -rf var/cache/* var/page_cache/* var/view_preprocessed/* generated/code/* var/di/* pub/static/frontend/* pub/static/adminhtml/*
+
+rm -rf var/cache/*
+rm -rf var/composer_home/*
+rm -rf var/page_cache/*
+
+chmod -R 777 var/ pub/ generated/
+php -dmemory_limit=8G bin/magento cache:clean
+php -dmemory_limit=8G bin/magento cache:flush
+php -dmemory_limit=8G bin/magento setup:upgrade
+php -dmemory_limit=8G bin/magento setup:di:compile
+php -dmemory_limit=8G bin/magento setup:static-content:deploy -f
+php -dmemory_limit=8G bin/magento indexer:reset
+php -dmemory_limit=8G bin/magento indexer:reindex
+php -dmemory_limit=8G bin/magento cache:flush
+chmod -R 777 var/ pub/ generated/
+
+php bin/magento module:status
+php bin/magento cron:run
+
+php bin/magento deploy:mode:set developer
+php bin/magento deploy:mode:set production
+php bin/magento cache:enable
+php bin/magento deploy:mode:show
+php -dmemory_limit=4G bin/magento deploy:mode:set production -s (-s stands for --skip-compilation, it will skip compilation.)
+
+How to check enable, disable cache type(s)
+php bin/magento cache:enable
+php bin/magento cache:disable
+
+Indexer command line
+Check indexer status by the following command
+php bin/magento indexer:info
+
+How to Show Index Mode
+php bin/magento indexer:show-mode
+
+Reset Specific Index
+php -f bin/magento indexer:reset indexer_name
+==================================================================================================
+php73 bin/magento module:enable --clear-static-content Harrigo_EverCrumbs
+
+php73 bin/magento module:disable --clear-static-content Magento_Braintree
+php bin/magento module:enable Tms_Printcomment
+php bin/magento module:disable Activo_SearchRefinement --clear-static-content
+
+php bin/magento deploy:mode:set production --skip-compilation –
+
+==================================================================================================
+Remove Extension From Composer
+
+composer remove mageplaza/module-core
+rm -rf app/code/Mageplaza/
+rm -rf vendor/mageplaza/module-core
+composer dump-autoload
+==================================================================================================
+js "..\..\..\Notepad++\Notepad++LKL.exe"
+html "..\..\..\Notepad++\Notepad++LKL.exe"
+php "..\..\..\Notepad++\Notepad++LKL.exe"
+=========================== Magento 2 Public-Private Key =================
+https://marketplace.magento.com/customer/accessKeys/
+
+Magento 2 Public-Private Key
+
+Public Key: 58ac1bfe3adcca7822c2eec0dcee69cd
+Private Key: 83d81dc392ed1e57973f2c10c77ce967
+
+==================================================================================================
+
+To enable a module use the command:
+php bin/magento module:enable Best4Mage_CPSD
+
+To disable a module use the command:
+php73 bin/magento module:disable Magento_TwoFactorAuth
+
+To uninstall a module use the next command:
+php bin/magento module:uninstall Schogini_Firstdataglobalgateway
+
+php -dmemory_limit=8G bin/magento admin:user:create --admin-user="tempuser" --admin-password="tempuser@123" --admin-email="tempuser@gmail.com" --admin-firstname="tempuser" --admin-lastname="tempuser"
+user : tempuser
+password : tempuser@123
+==================================================================================================
+--------------------------------------------
+UNZIP .tgz file : tar zxvf fileNameHere.tgz
+OR
+gunzip -c fileNameHere.tgz | tar xvf -
+--------------------------------------------
+zip -r filename.zip foldername/
+zip -r dealerstaging.zip 
+
+zip -r clausingindustrial_2020.zip * -x backup/*\* media/*\* full_source_db_11_7_2017.zip media.zip
+zip -r clausingindustrial_2020.zip * -x pub/media/*\* Magento-CE-2.3.3-2019-09-26-03-30-45.zip/*\* a82f09e7_m233.sql/*\* 071119.sql/*\* 19nov2019.sql/*\* 281119.sql/*\* a82f09e7_m233.sql/*\* app.zip
+
+zip -r fmsproduction_21_july_2020.zip * -x FMS.sql/*\* FMS.sql.zip/*\* fms2migration_after_complete_migration_backp_17_july_2020.sql/*\* fms2migration_after_complete_migration_backp_18_july_2020.sql/*\* fms2migration_after_migration_backp_17_july_2020.sql/*\* fms2migration_before_migration_backp_16_july_2020.sql/*\* fmsprod_magento.sql/*\* fmsprod_magento.sql.gz/*\* fmsprod_magento.sql_old/*\* fmsprod_magento_2.sql/*\* fmsprod_magento_3.sql/*\* fmsprod_magento_new.sql/*\* fmsprod_magento_newOne.sql/*\* fmsproduction_18_july_2020.zip/*\* Magento-CE-2.3.4-2020-01-16-11-19-26.zip/*\* Migration_db_backp_18_2020.zip
+==================================================================================================
+Export a MySQL database:
+Syntax : 
+mysqldump -u [username] -p [database name] > [database name].sql
+mysqldump -u siabpanels -p siabpanels > siabpanels_backp_08_june_2020.sql
+mysqldump -u dealersu_456ted3 -p dealersu_456ted3s > dealersu_456ted3s.sql
+mysqldump -u dealersupplynetwork -p dealersupplynetwork > dealersupplynetwork_backp_06_june_20.sql
+mysqldump -u a82f09e7_admin -p a82f09e7_m233 > a82f09e7_m233.sql
+
+mysqldump -u [username] -p [database_name] > [data-dump].sql
+Where,
+username is the username you can log in to the database with
+database_name is the name of the database that will be exported
+data-dump.sql is the file in the current directory that the output will be saved to
+----------------------------------------------------------------------------------------
+Import Database
+Syntax:
+mysql -u [username] -p new_database < [data-dump].sql
+Where,
+username : is the username you can log in to the database with
+new_database : is the name of the freshly created database
+data-dump.sql : is the data dump file to be imported, located in the current directory
+
+mysql -u dealersupplynetworkm1 -p dealersupplynetworkm1 < dealersupplynetworkm1.sql
+==================================================================================================
+
+]A|xfP00cklG
+
+web/unsecure/base_url https://www.dealersupplynetwork.com/
+web/secure/base_url   https://www.dealersupplynetwork.com/
+
+
+-------------------------------------------
+1. Create Database
+2. Copy SQL file
+   Copy your SQL file to xampp/mysql/bin/ directory.
+   I copied tutorial.sql file.
+3. Open Command Prompt
+   Open Command Prompt.
+   Navigate to xampp/mysql/bin/ directory.
+   Type following command –
+   Syntax –
+
+	mysql -u username -p database_name < file.sql
+	username = Your MySQL username.
+
+	database_name = Database name in which you want to import.
+
+	file.sql = SQL file name.
+
+	Example –
+
+	mysql -u root -p tutorial < tutorial.sql
+	I am importing tutorial.sql file in tutorial Database.
+	Type the password if you have assigned to the user otherwise press Enter.
+-------------------------------------------
+==================================================================================================
+
+============================= windows localhost Start ============================================
+I want set write permission to folder pub/static in magento 2 in windows localhost. 
+can anyone help me how to set write permission to folder usig CLI
+
+You can give write permission by running below command in your CLI.
+
+takeown /F <folder name>
+For Example:
+
+takeown /F C:\wamp\www\Magento\www\pub\static
+
+generated folder Permission
+ takeown /F C:\xampp\htdocs\magento2\generated
+ takeown /F C:\xampp\htdocs\magento2\
+ 
+========================= NEW START Windows Command ===============================================
+
+You can run php pages using php.exe create some php file with php code and in the cmd write:
+
+[PATH to php.ext]\php.exe [path_to_file]\file.php
+Example Case for you:
+
+1. My XAMPP is installed on D:\php\ and php.exe resides in D:\php\php and
+   Magento folder is here D:\php\htdocs\MG\m212 ( http://localhost/MG/m212/)
+2. Re-indexing:   
+    i. Go on to D:
+    ii. D:\php\php>php D:\php\htdocs\MG\m212\bin\magento indexer:reindex   
+On XAMPP
+
+ Installed Xampp_root/php>php   'Path_to_project'
+It will work for you.
+
+EDIT:
+
+Go to php installation: cd c:\xampp\php\
+After that run: php.exe C:\xampp\htdocs\magento2\bin\magento indexer:reindex
+
+C:\xampp\htdocs\m235\bin>php magento setup:di:compile
+--------------------------------------------------------------------------------------------------------
+Remove Folder or Directory.
+
+rmdir /s <complete path of folder suppose>
+rmdir /s "C:\xampp\htdocs\m235\generated"
+
+
+========================= NEW END Windows Command ========================================================
+
+============================= windows localhost End ======================================================
+<host><![CDATA[localhost]]></host>
+<username><![CDATA[dealersu_456ted3]]></username>
+<password><![CDATA[AheadSuccorHorseSewn39]]></password>
+<dbname><![CDATA[dealersu_456ted3s]]></dbname>
+<initStatements><![CDATA[SET NAMES utf8]]></initStatements>
+<model><![CDATA[mysql4]]></model>
+<type><![CDATA[pdo_mysql]]></type>
+<pdoType><![CDATA[]]></pdoType>
+
+{{block class='Magento\\Framework\\View\\Element\\Template' area='frontend' template='Tms_Printcomment::ordercomment.phtml'  order=$order.increment_id}}
+{{block class='Magento\\Framework\\View\\Element\\Template' area='frontend' template='Tms_Printcomment::orderprint.phtml'  order=$order.increment_id}}
+==================================================================================================
+You can run php pages using php.exe create some php file with php code and in the cmd write:
+
+[PATH to php.ext]\php.exe [path_to_file]\file.php
+Example Case for you:
+
+1. My XAMPP is installed on D:\php\ and php.exe resides in D:\php\php and Magento folder is here D:\php\htdocs\MG\m212 ( http://localhost/MG/m212/)
+2. Re-indexing:   
+    i. Go on to D:
+    ii. D:\php\php>php D:\php\htdocs\MG\m212\bin\magento indexer:reindex   
+On XAMPP
+
+ Installed Xampp_root/php>php   'Path_to_project'
+It will work for you.
+
+EDIT:
+
+Go to php installation: cd c:\xampp\php\
+After that run: php.exe C:\xampp\htdocs\magento2\bin\magento indexer:reindex
+-------------------------------------------------------------------------------------------------------------
+Try This Command
+
+D:\xampp7.2\php\php.exe D:\xampp7.2\htdocs\m232\bin\magento indexer:reindex
+
+Use In Batch File
+==================================================================================================
+UBUNTU Command
+
+XAMPP UnInstall Command...
+
+sudo /opt/lampp/uninstall
+sudo rm -r /opt/lampp
+
+Uninstall MySQL
+
+sudo apt-get remove --purge mysql*
+sudo apt-get purge mysql*
+sudo apt-get autoremove
+
+Uninstall Apache
+
+A very simple and straightforward way that worked for me is as follows:
+
+Stop apache2
+
+sudo service apache2 stop
+
+Uninstall Apache2 and its dependent packages.
+
+sudo apt remove apache2*
+
+sudo apt-get purge apache2 apache2-utils apache2.2-bin apache2-common
+
+Use autoremove option to get rid of other dependencies.
+
+sudo apt-get autoremove
+
+Check whether there are any configuration files that have not been removed.
+
+whereis apache2
+
+If you get a response as follows apache2: /etc/apache2 remove the directory and existing configuration files.
+
+sudo rm -rf /etc/apache2
+
+Uninstall PHP...
+
+sudo apt-get purge php*
+apt-get remove php7.3*
+apt-get purge php7.3*
+apt-get autoremove
+
+
+Uninstall LAMP
+
+sudo apt-get purge apache2 mysql-server php
+sudo apt autoremove
+sudo apt autoclean
+
+
+*************************************************************************************************************
+# This will remove Apache
+sudo service apache2 stop
+sudo apt-get purge apache2 apache2-utils apache2.2-bin apache2-common
+sudo apt remove apache2.*
+sudo apt-get autoremove
+whereis apache2
+sudo rm -rf /etc/apache2
+
+# This will remove PHP
+sudo apt-get purge `dpkg -l | grep php7.2| awk '{print $2}' |tr "\n" " "`
+sudo apt-get purge php7.*
+sudo apt-get autoremove --purge
+whereis php
+sudo rm -rf /etc/php
+
+# This will remove MYSql
+sudo service mysql stop
+sudo apt-get remove --purge *mysql\*
+sudo apt-get remove --purge mysql-server mysql-client mysql-common -y
+rm -rf /etc/mysql
+sudo apt-get autoremove
+sudo apt-get autoclean
+*************************************************************************************************************
+=============================================================================================================
+
+https://www.youtube.com/watch?v=mZ2G92Po4vg
+
+MYSQL Error
+
+
+1) Stop all Services like Xampp
+sudo /opt/lampp/xampp stop
+
+2) sudo service mysql start
+
+=============================================================================================================
+Elastic Search...
+
+https://magecomp.com/blog/magento-2-how-to-configure-elasticsearch/
+
+https://blog.sleeplessbeastie.eu/2020/02/29/how-to-prevent-systemd-service-start-operation-from-timing-out/
+
+sudo systemctl status elasticsearch
+sudo systemctl start elasticsearch
+-------------------------------------------------------------------------------------------------------------
+Job for elasticsearch.service failed because a timeout was exceeded.
+See "systemctl status elasticsearch.service" and "journalctl -xe" for details.
+
+
+Solution : 
+==============================================================================================================
+Job for apache2.service failed because the control process exited with error code.
+See "systemctl status apache2.service" and "journalctl -xe" for details.
+
+Answer (Method 1) : 
+
+sudo apt-get -o DPkg::Options::="--force-confmiss" --reinstall install apache2
+
+sudo apt-get purge apache2
+sudo apt-get install apache2
+apt-get purge libapache2-mod-php5 php5 
+apt-get install libapache2-mod-php5 php5
+
+
+Answer (Method 2) : 
+
+sudo apt-get purge apache2
+sudo apt-get install apache2
+apache2 -v
+sudo service apache2 stop
+sudo service apache2 start
+sudo service apache2 restart
+
+*************************************************************************************************************
+
+Install Apache 2 - not start problem
+
+https://www.youtube.com/watch?v=R1r60d0x2JA
+
+apt-get purge apache2 (Remove old version of Apace from Ubuntu)
+apt-get update & apt-get dist-upgrade
+apt-get install apache2 apache2-doc apache2-utils
+
+
+Method 2 : must use if apache2 not start
+sudo apt purge apache2 && sudo apt install apache2
+
+------------------------------------------------------------------------------------------------------------
+https://askubuntu.com/questions/1078461/accidentally-deleted-usr-sbin-apache2-on-ubuntu-18-04
+
+sudo apt install --reinstall apache2-bin   
+sudo service apache2 start  
+
+check apache2 start or not
+
+sudo systemctl status apache2
+=============================================================================================================
+Uninstall Composer
+
+
+=============================================================================================================
+mysql -V
+
+Command 'mysql' not found, but can be installed with:
+
+apt install mysql-client-core-8.0     # version 8.0.22-0ubuntu0.20.04.3, or
+apt install mariadb-client-core-10.3  # version 1:10.3.25-0ubuntu0.20.04.1
+
+*************************************************************************************************************
+ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
+
+https://www.youtube.com/watch?v=oXjJRrbKjp0
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+dpkg: error processing package mysql-server-8.0 (--configure):
+ installed mysql-server-8.0 package post-installation script subprocess returned error exit status 1
+
+
+=============================================================================================================
+Uninstall Elasticsearch
+
+https://kb.objectrocket.com/elasticsearch/how-to-uninstall-elasticsearch-on-linux
+
+sudo apt-get remove elasticsearch
+rpm -e elasticsearch
+sudo yum remove elasticsearch
+
+Purging Elasticsearch Configuration Files
+
+sudo apt-get --purge autoremove elasticsearch
+sudo dpkg --remove elasticsearch
+sudo dpkg --purge elasticsearch
+sudo dpkg --purge --force-all elasticsearch
+sudo rm -rf /var/lib/elasticsearch/
+sudo rm -rf /etc/elasticsearch
+
+
+=============================================================================================================
+This will remove all php7 versions, be it php 7.0 or php 7.1 etc..
+
+sudo apt-get purge php7.*
+sudo apt-get autoclean
+sudo apt-get autoremove
+==============================================================================================================
+ /etc/mysql/my.cnf
+==============================================================================================================
+
+Install LAMP :
+
+https://www.youtube.com/watch?v=aqNwhWAplvM
+https://devanswers.co/install-apache-mysql-php-lamp-stack-ubuntu-20-04/
+
+sudo apt update && sudo apt install php7.3 libapache2-mod-php php-mysql
+==============================================================================================================
+mysql password : 15101993
+==============================================================================================================
+if you are using php7 then use below command :
+
+sudo apt-get install php7.4-dom
+sudo apt-get install php7.4-curl
+sudo apt-get install php7.4-gd
+sudo apt-get install php7.4-intl
+sudo apt-get install php7.4-soap
+sudo apt-get install php7.4-bcmath
+sudo apt-get install php7.4-zip
+
+sudo apt-get install php7.3-curl
+sudo apt-get install php7.3-gd
+sudo apt-get install php7.3-bcmath
+sudo apt-get install php7.3-cgi
+sudo apt-get install php7.3-ldap
+sudo apt-get install php7.3-mbstring
+sudo apt-get install php7.3-xml
+sudo apt-get install php7.3-soap
+sudo apt-get install php7.3-xsl
+sudo apt-get install php7.3-zip
+==============================================================================================================
+Fatal error: Uncaught Error: Class ‘Locale’ not found in lib/internal/Magento/Framework/Locale/Bundle/DataBundle.php:64
+
+Solution:
+export PATH="/Applications/MAMP/bin/php/php7.4.13/bin:$PATH"
+==============================================================================================================
+php bin/magento setup:install --base-url="http://127.0.0.1/etradmart" --db-host="localhost" --db-name="etradmart" --db-user="root"
+--db-password="" --admin-firstname="admin" --admin-lastname="admin" --admin-email="solankirushikesh786@gmail.com" --admin-user="admin" --admin-password="admin@123" --language="en_US" --currency="USD" --timezone="America/Chicago" --use-rewrites="1"
+==============================================================================================================
+sudo apt install php libapache2-mod-php7.3
+
+sudo apt purge libapache2-mod-php7.3 libapache2-mod-php
+
+then
+
+sudo apt install libapache2-mod-php7.3 libapache2-mod-php
+
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '15101993';
+==============================================================================================================
+
+CREATE USER 'admin'@'%' IDENTIFIED BY 'admin@123';
+GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' WITH GRANT OPTION;
+==============================================================================================================
+UBUNTU IP  ADDRESS : inet 192.168.0.114
+
+ssh rushikesh@192.168.0.114
+
+
+Install LAMP.
+
+https://www.youtube.com/watch?v=TNwCGttYrlM
+
+How to install LAMP + PHPMyAdmin on Ubuntu 18.04 LTS
+
+# Install apache
+sudo apt-get install apache2
+
+# Install PHP
+sudo apt-get install php php-curl php-xml libapache2-mod-php php-mysql php-mbstring php-gettext
+
+sudo apt-get install php7.4 php php-curl libapache2-mod-php php-cli php-mysql php-fpm php-json php-common php-mysql php-zip php-gd php-mbstring php-curl php-xml php-pear php-bcmath php-mbstring
+
+# Install MySql
+sudo apt-get install mysql-server mysql-client
+
+sudo mysql_secure_installation
+
+sudo phpenmod mbstring
+
+sudo systemctl restart apache2
+
+sudo mysql -u root -p
+
+# MySQL CLI
+
+SELECT user,authentication_string,plugin,host FROM mysql.user;
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'LINUX@1993v6';
+
+FLUSH PRIVILEGES;
+
+exit; 
+
+# Install PHPMyAdmin
+
+sudo apt-get install phpmyadmin
+
+
+UNINSTALL COMPONENT "file://component_validate_password";
+INSTALL COMPONENT "file://component_validate_password";
+
+composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition m242
+
+
+php7.4 bin/magento setup:install --base-url=http://127.0.0.1/m242/​ \
+--db-host=localhost --db-name=m242 --db-user=root --db-password=LINUX@1993v6 \
+--admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
+--admin-user=admin --admin-password=admin@123 --language=en_US \
+--currency=USD --timezone=America/Chicago --use-rewrites=1 \
+--search-engine=elasticsearch7 --elasticsearch-host=localhost \
+--elasticsearch-port=9200
+
+php7.4 bin/magento setup:install --base-url="http://127.0.0.1/m242/" --db-host="localhost" --db-name="m242" --db-user="root" --db-password="LINUX@1993v6" --admin-firstname="admin" --admin-lastname="admin" --admin-email="test@gmail.com" --admin-user="admin" --admin-password="admin@123" --language="en_US" --currency="USD" --timezone="America/Chicago" --use-rewrites="1" --backend-frontname="admin" --elasticsearch-host=127.0.0.1
+
+
+[SUCCESS]: Magento installation complete.
+[SUCCESS]: Magento Admin URI: /admin_6hv278
+
+==============================================================================================================
+rush@1993
+ composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition <install-directory-name>
+
+MYSQL PASSWORD : LINUX@1993v6
+
+phpmyadmin password : LINUX@1993v6
+==============================================================================================================
+apache2.conf
+
+PATH :/etc/apache2/apache2.conf
+==============================================================================================================
+rushikesh@rushikesh:/$ curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer --version=1.10.16
+All settings correct for using Composer
+Downloading...
+
+Composer (version 1.10.16) successfully installed to: /usr/local/bin/composer
+Use it: php /usr/local/bin/composer
+==============================================================================================================
+https://github.com/Rushikesh786/etradmart.git
+
+
+git init
+git add app/
+or use 
+git add .   (to upload all files and folders)
+git commit -m "file uploaded"
+git remote add origin https://github.com/Rushikesh786/etradmart.git
+git push -u origin master
+git push origin master
+
+gh repo clone Rushikesh786/etradmart
+==============================================================================================================
+sudo apt-get install php7.4-curl
+sudo apt-get install php7.4-soap
+sudo apt-get install php7.4-bcmath
+sudo apt-get install php7.4-zip
+sudo apt-get install php7.4-gd
+
+sudo apt-get install php7.4-mcrypt
+sudo apt-get install php7.4-intl
+sudo apt-get install php7.4-mbstring
+===============================================================================================================
+
+Apache2 Start : 
+
+sudo service apache2 start
+sudo service apache2 stop
+sudo service apache2 restart
+
+Phpmyadmin Start :
+===============================================================================================================
