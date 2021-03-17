@@ -1,0 +1,291 @@
+How to use Command Line Interface CLI
+In this tutorial, we will talk about Command Line Inteface (CLI) in Magento 2. As you know, from Magento 2, they add many commands in bin/magento. This may difficult to get approach this , but let me explain more detail in this tutorial.
+
+When you run command in terminal:
+
+php bin/magento
+or
+
+bin/magento
+You will get the list of Magento 2 command line available, this list includes custom command line
+
+Usage:                                                                                                                      
+ command [options] [arguments]                                                                                              
+                                                                                                                            
+Options:                                                                                                                    
+ --help (-h)           Display this help message                                                                            
+ --quiet (-q)          Do not output any message                                                                            
+ --verbose (-v|vv|vvv) Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug   
+ --version (-V)        Display this application version                                                                     
+ --ansi                Force ANSI output                                                                                    
+ --no-ansi             Disable ANSI output                                                                                  
+ --no-interaction (-n) Do not ask any interactive question                                                                  
+                                                                                                                            
+Available commands:                                                                                                         
+ help                                      Displays help for a command                                                      
+ list                                      Lists commands                                                                   
+admin                                                                                                                       
+ admin:user:create                         Creates an administrator                                                         
+ admin:user:unlock                         Unlock Admin Account                                                             
+cache                                                                                                                       
+ cache:clean                               Cleans cache type(s)                                                             
+ cache:disable                             Disables cache type(s)                                                           
+ cache:enable                              Enables cache type(s)                                                            
+ cache:flush                               Flushes cache storage used by cache type(s)                                      
+ cache:status                              Checks cache status                                                              
+catalog                                                                                                                     
+ catalog:images:resize                     Creates resized product images                                                   
+ catalog:product:attributes:cleanup        Removes unused product attributes.                                               
+cron                                                                                                                        
+ cron:run                                  Runs jobs by schedule                                                            
+customer                                                                                                                    
+ customer:hash:upgrade                     Upgrade customer's hash according to the latest algorithm                        
+deploy                                                                                                                      
+ deploy:mode:set                           Set application mode.                                                            
+ deploy:mode:show                          Displays current application mode.                                               
+dev                                                                                                                         
+ dev:source-theme:deploy                   Collects and publishes source files for theme.                                   
+ dev:tests:run                             Runs tests                                                                       
+ dev:urn-catalog:generate                  Generates the catalog of URNs to *.xsd mappings for the IDE to highlight xml.    
+ dev:xml:convert                           Converts XML file using XSL style sheets                                         
+i18n                                                                                                                        
+ i18n:collect-phrases                      Discovers phrases in the codebase                                                
+ i18n:pack                                 Saves language package                                                           
+ i18n:uninstall                            Uninstalls language packages                                                     
+indexer                                                                                                                     
+ indexer:info                              Shows allowed Indexers                                                           
+ indexer:reindex                           Reindexes Data                                                                   
+ indexer:reset                             Resets indexer status to invalid                                                 
+ indexer:set-mode                          Sets index mode type                                                             
+ indexer:show-mode                         Shows Index Mode                                                                 
+ indexer:status                            Shows status of Indexer                                                          
+info                                                                                                                        
+ info:adminuri                             Displays the Magento Admin URI                                                   
+ info:backups:list                         Prints list of available backup files                                            
+ info:currency:list                        Displays the list of available currencies                                        
+ info:dependencies:show-framework          Shows number of dependencies on Magento framework                                
+ info:dependencies:show-modules            Shows number of dependencies between modules                                     
+ info:dependencies:show-modules-circular   Shows number of circular dependencies between modules                            
+ info:language:list                        Displays the list of available language locales                                  
+ info:timezone:list                        Displays the list of available timezones                                         
+maintenance                                                                                                                 
+ maintenance:allow-ips                     Sets maintenance mode exempt IPs                                                 
+ maintenance:disable                       Disables maintenance mode                                                        
+ maintenance:enable                        Enables maintenance mode                                                         
+ maintenance:status                        Displays maintenance mode status                                                 
+module                                                                                                                      
+ module:disable                            Disables specified modules                                                       
+ module:enable                             Enables specified modules                                                        
+ module:status                             Displays status of modules                                                       
+ module:uninstall                          Uninstalls modules installed by composer                                         
+sampledata                                                                                                                  
+ sampledata:deploy                         Deploy sample data modules                                                       
+ sampledata:remove                         Remove all sample data packages from composer.json                               
+ sampledata:reset                          Reset all sample data modules for re-installation                                
+setup                                                                                                                       
+ setup:backup                              Takes backup of Magento Application code base, media and database                
+ setup:config:set                          Creates or modifies the deployment configuration                                 
+ setup:cron:run                            Runs cron job scheduled for setup application                                    
+ setup:db-data:upgrade                     Installs and upgrades data in the DB                                             
+ setup:db-schema:upgrade                   Installs and upgrades the DB schema                                              
+ setup:db:status                           Checks if DB schema or data requires upgrade                                     
+ setup:di:compile                          Generates DI configuration and all missing classes that can be auto-generated    
+ setup:install                             Installs the Magento application                                                 
+ setup:performance:generate-fixtures       Generates fixtures                                                               
+ setup:rollback                            Rolls back Magento Application codebase, media and database                      
+ setup:static-content:deploy               Deploys static view files                                                        
+ setup:store-config:set                    Installs the store configuration                                                 
+ setup:uninstall                           Uninstalls the Magento application                                               
+ setup:upgrade                             Upgrades the Magento application, DB data, and schema                            
+theme                                                                                                                       
+ theme:uninstall                           Uninstalls theme                                                                 
+                                            
+Command line category
+We can divide the list into the following categories:
+
+Cache
+Indexer
+Cron job
+Code compiler
+Set the Magento mode
+i18n translation
+Run unit tests
+Maintenance
+module management
+Setup: Install, Upgrade, Uninstall, Backup , Rollback
+Theme
+Deployment
+Next we will take few examples of each category.
+
+Cache command line
+How to check status of cache type(s)
+php bin/magento cache:status
+Result:
+
+                    config: 1
+                    layout: 1
+                block_html: 1
+               collections: 1
+                    db_ddl: 1
+                       eav: 1
+                 full_page: 1
+                 translate: 1
+        config_integration: 1
+    config_integration_api: 1
+         config_webservice: 1
+How to Clean cache type(s)
+php bin/magento cache:clean
+Result:
+
+$ php bin/magento cache:clean                  
+Cleaned cache types:                           
+config                                         
+layout                                         
+block_html                                     
+collections                                    
+reflection                                     
+db_ddl                                         
+eav                                            
+customer_notification                          
+full_page                                      
+config_integration                             
+config_integration_api                         
+translate                                      
+config_webservice                              
+How to flush cache type(s)
+php bin/magento cache:flush
+How to check enable, disable cache type(s)
+php bin/magento cache:enable
+php bin/magento cache:disable
+advanced command:
+
+magento cache:enable [type] ... [type]
+magento cache:disable [type] ... [type]
+E.g of disable full page cache
+
+magento cache:disable full_page
+Indexer command line
+Check indexer status by the following command
+
+php bin/magento indexer:info
+We will get result:
+
+design_config_grid                       Design Config Grid
+customer_grid                            Customer Grid
+catalog_category_product                 Category Products
+catalog_product_category                 Product Categories
+catalog_product_price                    Product Price
+catalog_product_attribute                Product EAV
+catalogsearch_fulltext                   Catalog Search
+cataloginventory_stock                   Stock
+catalogrule_rule                         Catalog Rule Product
+catalogrule_product                      Catalog Product Rule
+How to Reindex Data
+php bin/magento indexer:reindex
+How to Reset indexer status to invalid
+php bin/magento indexer:reset
+How to Show Index Mode
+php bin/magento indexer:show-mode
+Result:
+
+$ php bin/magento indexer:show-mode
+
+Design Config Grid:                                Update on Save
+Customer Grid:                                     Update on Save
+Category Products:                                 Update on Save
+Product Categories:                                Update on Save
+Product Price:                                     Update on Save
+Product EAV:                                       Update on Save
+Catalog Search:                                    Update on Save
+Stock:                                             Update on Save
+Catalog Rule Product:                              Update on Save
+Catalog Product Rule:                              Update on Save
+How to Set index mode type
+php bin/magento indexer:set-mode {realtime|schedule} [indexer]
+E.g:
+
+magento indexer:set-mode schedule catalog_category_product catalog_product_category
+Deploy command line
+Commands syntax:
+
+php bin/magento setup:static-content:deploy <lang> ... <lang> [--dry-run] 
+How to run deploy static content
+php bin/magento setup:static-content:deploy
+It will display as the following:
+
+$ php bin/magento setup:static-content:deploy
+
+Requested languages: en_US
+=== frontend -> Magento/blank -> en_US ===
+........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+By default it will run deploy static content of default language: en_EN
+
+If you want to deploy static content of other language such as: pt_BR
+
+Run
+
+php bin/magento setup:static-content:deploy pt_BR
+Then get result:
+
+Requested languages: pt_BR
+=== frontend -> Magento/luma -> pt_BR ===
+... progress indicator ...
+Successful: 1613 files; errors: 0
+
+=== frontend -> Magento/blank -> pt_BR ===
+... progress indicator ...
+Successful: 1620 files; errors: 0
+
+=== adminhtml -> Magento/backend -> pt_BR ===
+... progress indicator ...
+Successful: 1626 files; errors: 0
+
+=== Minify templates ===
+... progress indicator ...
+Successful: 858 files modified
+---
+How to get admin path via command line
+Do you know? You can get admin path without access to etc/env.php file.
+
+Run
+
+php bin/magento info:adminuri
+Result:
+
+$ php bin/magento info:adminuri
+
+Admin URI: /admin
+So the path is /admin, now navigate your browser to domain.com/admin to access to Magento 2 backend.
+
+How to enable maintenance mode via command line
+Enable maintenance mode
+php bin/magento maintenance:enable
+Result:
+
+$ php bin/magento maintenance:enable
+Enabled maintenance mode
+Disable maintenance mode
+php bin/magento maintenance:disable
+Allow IPs to access to the store
+Sets maintenance mode exempt IPs
+
+php bin/magento maintenance:allow-ips
+E.g:
+
+php bin/magento maintenance:allow-ips 168.168.168.168
+Set exempt IP-addresses: 168.168.168.168
+How to set Magento Developer mode or Product Mode
+Show current Magento 2 mode
+
+php bin/magento deploy:mode:show
+Result:
+
+$ php bin/magento deploy:mode:show
+Current application mode: default. (Note: Environment variables may override this value.)
+Currently, we are in default mode, let switch to Developer mode
+
+php bin/magento deploy:mode:set developer
+Result:
+
+$ php bin/magento deploy:mode:set developer
+Enabled developer mode.											

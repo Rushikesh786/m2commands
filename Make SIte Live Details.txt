@@ -1,0 +1,18 @@
+Make Website Live
+
+==> Please follow the below description to make website live.
+ 
+ 1. First Rename the folder using FTP.
+ 
+ Go to root directory.There are two folders.
+ a. magento.martialartsmart.com
+b. martialartsmart.com
+Switch the name of both directory.
+
+2. Go to the phpmyadmin using nexcess control panel.
+Select the database 'martiala_new_martial'.
+Select the core_config_data table.
+
+Change the value of web/unsecure/base_url  & web/secure/base_url respectively.
+ http://magento.martialartsmart.com/ -> http://martialartsmart.com/
+https://magento.martialartsmart.com/ -> https://martialartsmart.com/

@@ -1,0 +1,58 @@
+===========================================================================================================
+Magento 2 Public-Private Key
+
+Public Key: 58ac1bfe3adcca7822c2eec0dcee69cd
+Private Key: 83d81dc392ed1e57973f2c10c77ce967
+================================== Ronakbhai Document =====================================================
+php bin/magento maintenance:enable
+
+cp composer.json composer.json.bak
+
+composer require magento/product-community-edition=2.3.4 --no-update
+
+composer require --dev allure-framework/allure-phpunit:~1.2.0 friendsofphp/php-cs-fixer:~2.14.0 lusitanian/oauth:~0.8.10 magento/magento-coding-standard:~3.0.0 magento/magento2-functional-testing-framework:2.4.5 pdepend/pdepend:2.5.2 phpmd/phpmd:@stable phpunit/phpunit:~6.5.0 sebastian/phpcpd:~3.0.0 squizlabs/php_codesniffer:~3.4.0 --sort-packages --no-update
+
+composer remove --dev sjparkinson/static-review fabpot/php-cs-fixer --no-update
+
+composer update
+
+rm -rf var/cache/*
+
+rm -rf var/page_cache/*
+
+rm -rf generated/code/*
+===========================================================================================================
+https://magento.stackexchange.com/questions/319193/upgrade-magento-2-3-3-to-2-4
+
+First take to older version website backup and after your run direct magento 2.4.0 version.
+
+Magento Open Source:
+
+composer require magento/product-community-edition=2.4.0 --no-update
+composer update
+
+When it is completed, run another SSH command and upgrade the Magento database:
+
+php bin/magento setup:upgrade
+
+You’ve successfully performed a Magento 2 upgrade! Now go to the frontend and backend and check everything
+-----------------------------------------------------------------------------------------------------------
+https://magento.stackexchange.com/questions/318858/magento-2-3-5-p1-upgrade-to-2-4-0-problem
+===========================================================================================================
+https://devdocs.magento.com/guides/v2.4/comp-mgr/cli/cli-upgrade.html
+https://devdocs.magento.com/cloud/project/project-upgrade.html
+===========================================================================================================
+Remember Step of Magento Version Upgrade
+
+1) Get All Magento Setup Files Backup and Database Backup
+zip -r thejerusalemgiftshop_bckp_28_august_2020.zip *
+
+2) Check all 3rd Party Extensions to Compatible with new Version or not.
+
+3) crontab -l
+MAILTO=""
+PATH=/opt/remi/php71/root/usr/bin:/opt/remi/php71/root/usr/sbin:/usr/local/bin:/usr/bin:/bin
+*/5 * * * * /usr/sbin/relax php -f /chroot/home/a310743a/thejerusalemgiftshop.com/bin/magento cron:run 2>&1 | grep -v "Ran jobs by schedule" >> /chroot/home/a310743a/thejerusalemgiftshop.com/var/log/magento.log
+*/5 * * * * /sbin/relax php -f /chroot/home/a310743a/thejerusalemgiftshop.com/bin/magento setup:cron:run 2>&1 | grep -v "Ran jobs by schedule" >> /chroot/home/a310743a/thejerusalemgiftshop.com/var/log/setup.cron.log
+*/5 * * * * /sbin/relax php -f /chroot/home/a310743a/thejerusalemgiftshop.com/update/cron.php >> /chroot/home/a310743a/thejerusalemgiftshop.com/var/log/update.cron.log * * * * * /usr/sbin/relax php -f /chroot/home/a310743a/thejerusalemgiftshop.com/bin/magento ind:rei
+* * * * * /usr/sbin/relax php -f /chroot/home/a310743a/thejerusalemgiftshop.com/bin/magento c:f
