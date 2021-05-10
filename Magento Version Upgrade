@@ -56,3 +56,71 @@ PATH=/opt/remi/php71/root/usr/bin:/opt/remi/php71/root/usr/sbin:/usr/local/bin:/
 */5 * * * * /sbin/relax php -f /chroot/home/a310743a/thejerusalemgiftshop.com/bin/magento setup:cron:run 2>&1 | grep -v "Ran jobs by schedule" >> /chroot/home/a310743a/thejerusalemgiftshop.com/var/log/setup.cron.log
 */5 * * * * /sbin/relax php -f /chroot/home/a310743a/thejerusalemgiftshop.com/update/cron.php >> /chroot/home/a310743a/thejerusalemgiftshop.com/var/log/update.cron.log * * * * * /usr/sbin/relax php -f /chroot/home/a310743a/thejerusalemgiftshop.com/bin/magento ind:rei
 * * * * * /usr/sbin/relax php -f /chroot/home/a310743a/thejerusalemgiftshop.com/bin/magento c:f
+
+=================================================== 2021 ==========================================================================================
+https://magecomp.com/blog/upgrade-magento-version-from-2-3-to-2-4/
+
+How to Upgrade Magento Version from 2.3.X to 2.4.2
+
+Quick Summary:
+As we all know that Magento made a release of Magento 2.4.2 and if you are Magento 2 store owner or Magento developer then you should never miss this update. Check detailed information of Magento 2.4.2 release notes in our previously published article Magento 2.4.2: Release Notes (Everything You Need to Know). 
+
+Enhance your Magento 2 store by upgrading it with the latest version of Magento 2.4.2. by our certified and experienced developers. Check out How to Install Magento 2 for installing Magento 2 Smoothly.
+-----------------------------------------------------------------------------------------------------------------
+Steps to Upgrade Magento Version from 2.3.X to 2.4.2 
+
+Firstly we will prepare our site for Upgrade
+
+Assure you have configured your server that works with PHP 7.4. As per the release notes of Magento 2.4.2, it only supports PHP 7.4. You can also install Magento 2.4.2 using PHP 7.3 at your own risk as it is not tested anymore. The best practice is using the latest version of PHP 7.4.
+
+Check your PHP version with the help of the given below command:
+php -v
+
+Assure your composer is pointing to the accurate PHP version. By applying the below-given command you can verify your composer’s PHP version
+composer -vvv about
+
+Assure you have configured your server that works with Elasticsearch 7.9.x. As per the release notes of Magento 2.4.2, is recommended to use Elasticsearch 7.9.x. You can apply the below-given command to verify your version of Elasticsearch. 
+
+Learn from scratch How to Install Magento 2.4 with Elasticsearch In Ubuntu and check the tutorial at Magento 2: How To Configure Elasticsearch.
+
+curl -XGET ‘http://localhost:9200’ or
+curl -XGET ‘http://YOURDOMAIN:9200’
+
+Now backup your database as well as code. Most of the developers have the best practice to manage their code in the GitHub. So for them, there is no need to take code backup as they will get the code from there itself but the database backup is mandatory for all.
+--------------------------------------------------------------------------------------------------------------------------------------
+Upgrade Magento Version from 2.3.X to 2.4.2:
+
+Step 1: Implement the below command to convert your site into maintenance mode if you are performing on a live site.
+php bin/magento maintenance:enable
+
+Step 2: In case you are implementing the upgrade of Magento 2.4.2 into your local system then you can ignore the initial step and 
+Grab backup composer.json using the below-given command.
+cp composer.json composer.json.bak
+
+Step 3: Now we will Install the Composer update plugin.
+composer require magento/composer-root-update-plugin=~1.0 --no-update
+composer update
+
+Step 4: After this, you will require to update the composer.json with the latest version.
+In this scene, we have Magento Version 2.4.2. so you can go to the Magento 2 installation root path and fire the below-given code.
+composer require magento/product-community-edition=2.4.2 --no-update
+
+Step 5: Fire the following command
+composer update
+
+This process will consume some time to get completed. Mainly this command will download all the required packages and upgrade your Magento version from 2.3.x to 2.4.2.
+After you are done with the above steps fire below given commands.
+
+Step 6: Clear cache and regenerate code.
+php bin/magento cache:clean
+rm -rf var/cache/*
+rm -rf var/page_cache/*
+rm -rf generated/code/*
+php bin/magento setup:upgrade
+php bin/magento setup:di:compile
+php bin/magento setup:static-content:deploy -f
+
+Step 7: At last don’t forget to disable maintenance mode
+php bin/magento maintenance:disable
+
+That’s it you are upgraded to Magento 2.4.2
