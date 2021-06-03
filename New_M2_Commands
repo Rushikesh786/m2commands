@@ -1,0 +1,203 @@
+https://serverguy.com/magento/magento-2-commands/
+
+Follow these steps to configure and run Magento CLI:
+
+Login to your account with SSH
+Change the directory to Magento folder from the Command Prompt
+Make the CLI executable with this command:
+
+chmod 744 bin/magento
+
+To find the  available command option, type this command:
+
+bin/magento
+
+In this article, I am sharing the useful Magento 2 command. 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Admin Commands
+Create Admin Account
+
+php bin/magento admin:user:create
+
+Unlock Admin User Using Command Line
+
+php bin/magento admin:user:unlock adminusername
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Maintenance Mode Commands
+Enable Maintenance Mode Using Command Line
+
+php bin/magento maintenance:enable
+
+To enable maintenance mode for all clients except 192.0.0.1 and 192.0.0.2:
+
+php bin/magento maintenance:enable --ip=192.0.0.1 --ip=192.0.0.2
+
+To clear the list of IPs.
+
+php bin/magento maintenance:enable --ip=none
+
+Disable Maintenance Mode Using Command Line
+
+php bin/magento maintenance:disable
+
+Check Maintenance Mode Status Using Command Line
+
+php bin/magento maintenance:status
+
+Allow IP on Maintenance Mode Using Command Line
+
+php bin/magento maintenance:allow-ips --ip=192.0.0.1 --ip=192.0.0.2
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Cache Commands
+
+Clean Cache type
+
+Php bin/magento cache:clean
+
+Enables Cache type
+
+Php bin/magento cache:enable
+
+Flushes cache storage used by cache type(s)
+
+Php bin/magento cache:flushv
+
+Checks cache status
+
+Php bin/magento cache:status
+
+Resize product images
+
+Php bin/magento catalog:images:resize
+
+Upgrade customer’s hash according to the latest algorithm
+
+Php bin/magento customer:hash:upgrade
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Cron Commands
+Generates and installs crontab for current user
+
+Php bin/magento cron:install
+
+Removes tasks from crontab
+
+Php bin/magento cron:remove
+
+Runs jobs by schedule
+
+Php bin/magento cron:run
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Deploying Apps
+
+Set application mode
+
+Php bin/magento deploy:mode:set
+
+Displays current application mode
+
+Php bin/magento deploy:mode:show
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Indexer Commands
+
+Shows allowed Indexers
+
+Php bin/magento indexer:info
+
+Reindexes Data
+
+Php bin/magento indexer:reindex
+
+Resets indexer status to invalid
+
+Php bin/magento indexer:reset
+
+Sets index mode type
+
+Php bin/magento indexer:set-mode
+
+Shows Index Mode
+
+Php bin/magento indexer:show-mode
+
+Shows status of Indexer
+
+Php bin/magento indexer:status
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Info Commands
+
+Displays the Magento Admin URI
+
+Php bin/magento info:adminuri
+
+Prints list of available backup files 
+
+Php bin/magento Info:backups:list
+
+Displays the list of available currencies
+
+Php bin/magento info:currency:list
+
+Shows number of dependencies on Magento framework
+
+Php bin/magento Info:dependencies:show-framework
+
+Shows number of dependencies between modules
+
+Php bin/magento info:dependencies:show-modules
+
+Prints list of available backup files
+
+Php bin/magento info:backups:list
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Setup Commands
+
+Takes backup of Magento Application code base, media and database
+
+Php bin/magento Setup:backup
+
+Installs the Magento application
+
+Php bin/magento Setup:install
+
+Generates fixtures
+
+Php bin/magento Setup:performance:generate-fixtures
+
+Rolls back Magento Application codebase, media and database
+
+Php bin/magento Setup:rollback
+
+Deploys static view files
+
+Php bin/magento Setup:static-content:deploy
+
+Installs the store configuration. Deprecated since 2.2.0. Use config:set instead
+
+Php bin/magento Setup:store-config:set
+
+Uninstalls the Magento application
+
+Php bin/magento Setup:uninstall
+
+Upgrades the Magento application, DB data, and schema
+
+Php bin/magento setup:upgrade
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Store Commands
+
+Displays the list of stores
+
+Php bin/magento store:list
+
+Displays the list of websites
+
+Php bin/magento store:website:list
+
+Uninstalls theme
+
+Php bin/magento Theme:uninstall
+
+Generates Varnish VCL and echos it to the command line
+
+Php bin/magento varnish:vcl:generate
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
